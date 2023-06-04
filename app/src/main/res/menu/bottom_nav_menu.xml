@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:id="@+id/home"/>
+    <item android:title="Panduan"
+        android:icon="@drawable/ic_baseline_format_list_bulleted_24"
+        android:id="@+id/panduan"/>
+    <item android:title="Huruf Semaphore"
+        android:icon="@drawable/ic_baseline_flag_24"
+        android:id="@+id/huruf"/>
+    <item android:title="About"
+        android:icon="@drawable/ic_baseline_info_24"
+        android:id="@+id/about"/>
+</menu>
