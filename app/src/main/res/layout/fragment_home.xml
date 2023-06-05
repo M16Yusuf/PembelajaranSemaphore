@@ -19,13 +19,13 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:text="Penerjemah"
-            android:id="@+id/btnPenerjemah" />
+            android:id="@+id/btnViewPenerjemah" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:text="Tebak Huruf"
-            android:id="@+id/btnTebak" />
+            android:id="@+id/btnViewTebak" />
 
 
     </LinearLayout>
