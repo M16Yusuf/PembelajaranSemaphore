@@ -6,12 +6,28 @@
     tools:context=".HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Home Fragment"
-        android:textSize="26dp"
-        android:layout_gravity="center"/>
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:gravity="top"
+        android:layout_weight="1">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:text="Penerjemah"
+            android:id="@+id/btnPenerjemah" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:text="Tebak Huruf"
+            android:id="@+id/btnTebak" />
+
+
+    </LinearLayout>
 
 </FrameLayout>

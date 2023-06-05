@@ -7,4 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+     <!--   warna tambahan -->
+    <color name="seaGreen">#2E8B57</color>
+    <color name="emerald">#2ECC71</color>
+    <color name="nephritis">#27AE60</color>
+    <color name="greenSea">#2C3E50</color>
+    <color name="wetAsphal">#34495E</color>
 </resources>
