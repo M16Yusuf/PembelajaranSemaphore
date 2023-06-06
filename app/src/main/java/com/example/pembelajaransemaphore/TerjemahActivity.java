@@ -13,13 +13,14 @@ import android.hardware.camera2.params.StreamConfigurationMap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.util.Size;
 import android.view.Surface;
-import android.view.SurfaceHolder;
 import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Arrays;
@@ -40,10 +41,9 @@ public class TerjemahActivity extends AppCompatActivity {
     private Handler mBackgroundHandler;
     private HandlerThread mBackgroundThread;
 
-    private Button btnFlip;
+    private TextView textTerjemah;
+    private Button btnFlip, btnReset;
     private int cameraIndex = 1;
-
-
 
 
     @Override
@@ -55,7 +55,8 @@ public class TerjemahActivity extends AppCompatActivity {
         assert textureView != null;
         textureView.setSurfaceTextureListener(textureListener);
 
-
+        textTerjemah = (TextView) findViewById(R.id.textViewTerjemah);
+        textTerjemah.setMovementMethod(new ScrollingMovementMethod());
 
         btnFlip = findViewById(R.id.btnViewFlip);
         btnFlip.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +65,15 @@ public class TerjemahActivity extends AppCompatActivity {
                 switchCamera();
             }
         });
+
+        btnReset = findViewById(R.id.btnViewReset);
+        btnReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textTerjemah.setText("");
+            }
+        });
+
     }
 
     private void switchCamera() {

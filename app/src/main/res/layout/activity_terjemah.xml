@@ -13,20 +13,48 @@
         android:id="@+id/TampilCamera"/>
 
     <LinearLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="10dp"
         android:gravity="bottom"
         android:layout_weight="1">
 
-        <Button
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:id="@+id/btnViewFlip"
-            android:layout_gravity="center"
-            android:background="@drawable/ic_baseline_flip_camera_ios_24"/>
+        <TextView
+            android:id="@+id/textViewTerjemah"
+            android:layout_width="250dp"
+            android:layout_height="150dp"
+            android:scrollbars="vertical"
+            android:textColor="@color/white"
+            android:padding="10dp"
+            android:text="@string/tutorialTerjemah"
+            android:textSize="20dp"
+            android:gravity="fill_horizontal"
+            android:background="@color/hijauTransparant"/>
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:gravity="top"
+            android:layout_weight="1"
+            >
+            <Button
+                android:id="@+id/btnViewReset"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_gravity="right"
+                android:background="@drawable/ic_baseline_restart_alt_24" />
+
+            <Button
+                android:id="@+id/btnViewFlip"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_gravity="right"
+                android:background="@drawable/ic_baseline_flip_camera_ios_24" />
+
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>

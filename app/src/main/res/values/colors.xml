@@ -14,4 +14,6 @@
     <color name="nephritis">#27AE60</color>
     <color name="greenSea">#2C3E50</color>
     <color name="wetAsphal">#34495E</color>
+    <color name="merahTransparant">#CCFF0000</color>
+    <color name="hijauTransparant">#A1239D57</color>
 </resources>
