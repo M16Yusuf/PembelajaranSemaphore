@@ -18,6 +18,8 @@ import android.util.Size;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.TextureView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.Arrays;
@@ -25,7 +27,6 @@ import java.util.Arrays;
 
 public class TerjemahActivity extends AppCompatActivity {
     private static final String TAG = "AndroidCameraApi";
-//    private SurfaceHolder mHolder;
     private Camera mCamera;
     private TextureView textureView;
     private String cameraId;
@@ -39,17 +40,44 @@ public class TerjemahActivity extends AppCompatActivity {
     private Handler mBackgroundHandler;
     private HandlerThread mBackgroundThread;
 
+    private Button btnFlip;
+    private int cameraIndex = 1;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_terjemah);
 
-
         textureView = (TextureView) findViewById(R.id.TampilCamera);
         assert textureView != null;
         textureView.setSurfaceTextureListener(textureListener);
+
+
+
+        btnFlip = findViewById(R.id.btnViewFlip);
+        btnFlip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switchCamera();
+            }
+        });
     }
+
+    private void switchCamera() {
+        if(cameraIndex == 1){
+            cameraIndex = 0;
+            cameraDevice.close();
+            openCamera();
+        }else{
+            cameraIndex = 1;
+            cameraDevice.close();
+            openCamera();
+        }
+    }
+
 
     TextureView.SurfaceTextureListener textureListener = new TextureView.SurfaceTextureListener() {
         @Override
@@ -123,12 +151,10 @@ public class TerjemahActivity extends AppCompatActivity {
         }
     }
 
-
-
     private void openCamera() {
         CameraManager manager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
         try {
-            cameraId = manager.getCameraIdList()[0];
+            cameraId = manager.getCameraIdList()[cameraIndex];
             CameraCharacteristics characteristics = manager.getCameraCharacteristics(cameraId);
             StreamConfigurationMap map = characteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
             assert map != null;
@@ -155,5 +181,4 @@ public class TerjemahActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
 }

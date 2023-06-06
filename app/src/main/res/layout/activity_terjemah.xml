@@ -12,5 +12,21 @@
         android:layout_height="match_parent"
         android:id="@+id/TampilCamera"/>
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:gravity="bottom"
+        android:layout_weight="1">
+
+        <Button
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:id="@+id/btnViewFlip"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_baseline_flip_camera_ios_24"/>
+
+    </LinearLayout>
 
 </RelativeLayout>
